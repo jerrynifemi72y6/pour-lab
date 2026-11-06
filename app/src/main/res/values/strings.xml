@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pour Lab</string>
+    <string name="hint">TILT TO POUR · DRAG THE CUP</string>
+    <string name="mat_water">Water</string>
+    <string name="mat_sand">Sand</string>
+    <string name="mat_bubbles">Bubbles</string>
+    <string name="mat_honey">Honey</string>
+</resources>

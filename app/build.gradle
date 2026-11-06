@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.jerrynifemi.pourlab'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.jerrynifemi.pourlab"
+        minSdk 21
+        targetSdk 34
+        versionCode 2
+        versionName "2.0"
+    }
+
+    // Same fixed key as the other builds: updates install cleanly over the old one.
+    signingConfigs {
+        release {
+            storeFile file("../keystore/oweme.p12")
+            storePassword "brainblitz2026"
+            keyAlias "brainblitz"
+            keyPassword "brainblitz2026"
+            storeType "PKCS12"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
